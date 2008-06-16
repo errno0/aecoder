@@ -1,0 +1,25 @@
+<h1>{{ joblisttype }}</h1> 
+{% if pagenav %}<div style="text-align: right">{{ pagenav }}</div>{% endif %}
+	<table>
+		<tr>
+			<th>Date</th>
+			<th>Title</th>
+			<th>Company</th>
+			<th>Category</th>
+		</tr>
+	{% for job in jobs %}
+		<tr>
+			<td>{{ job.created|date:"j M" }}</td>
+			<td><a href="/job/{{ job.key }}">{{ job.title }}</a></td>
+			<td>{{ job.company }}</td>
+			<td>{{ job.category|capfirst }}</td>
+		</tr>
+		<tr>
+			<td>&nbsp;</td>
+			<td colspan="3">
+				{{ job.description|truncatewords:"15" }} ...
+			</td>
+	{% endfor %}
+	</table>
+{% if pagenav %}<div style="text-align: right">{{ pagenav }}</div>{% endif %}
+

@@ -1,0 +1,19 @@
+{% extends "base.html" %}
+{% block title %} {{ application_name }} - {{ page_subtitle }} {% endblock %}
+{% block head %}<meta http-equiv="refresh" content="3;url=/job/{{ jobid }}"> {% endblock %}
+{% block body %} 
+<h1>{{ page_subtitle }}</h1>
+<p>Redirecting to job posting page. </p>
+<a href="/job/{{ jobid }}">View job now.</a>
+{% endblock %}
+
+{% block sidebar %}
+<div id="job_post_step">
+	<h1>Steps</h1>
+	<ul>
+		<li>Job Detail</li>
+		<li>Preview</li>
+		<li class="active">Complete</li>
+	</ul>
+</div>
+{% endblock %}

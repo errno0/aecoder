@@ -1,0 +1,61 @@
+{% extends "base.html" %}
+{% block title %} {{ application_name }} - {{ page_subtitle }} {% endblock %}
+{% block body %} 
+{%if picture %}<img src="{{ picture }}" alt="{{ firstname }} {{ lastname }}"/>{% endif %}<h1>{{ page_subtitle }}</h1>
+<table>
+	<tr>
+		<th>Personal Information</th>
+	</tr>
+	{% if homepage %}
+	<tr>
+		<td><a href="{{ homepage }}">Homepage</a></td>
+			
+	</tr>
+	{% endif %}
+	<tr>
+		<td>Skills: {{ tags }}</td>
+			
+	</tr>
+	<tr>
+		<td>
+			<div id="resumem" style="margin: 10px;">
+			{% if resumedisplay %}
+			{{ resumedisplay }}
+			{% else %}
+			Resume not updated.
+			{% endif %}
+			
+			</div>
+		</td>
+	</tr>
+	<tr>
+		<th>Contact User</th>
+	</tr>
+	<tr>
+		<td>
+			{%if email %}
+			<a href="mailto:{{ email }}">{{ firstname }} {{ lastname }}</a>
+			{% else %}
+			User email not updated
+			{% endif %}
+		</td>
+	</tr>
+	<tr><td><hr/></td></tr>
+	<tr>
+		<td><span style="float:left; text-align: left;">Joined {{ usercreatedate|date:"D, M j, Y" }}, Last Login {{ lastlogin }} </span>
+			<div style="float: right;">View {{ userviews }} time{{ userviews|pluralize }}</div><div style="clear:both"></div></td>
+	</tr>
+{%if iscurrentuser %}
+	<tr><td><hr/></td></tr>
+	<tr>
+		<form action="/user/edit" method="get">
+		<td align="center">
+			<input type="submit" value="edit" name="cmd"/>
+		</td>
+		</form>
+	</tr>
+{% endif %}
+</table>
+
+{% endblock %}
+

@@ -1,0 +1,52 @@
+
+{% extends "base.html" %}
+{% block body %}
+<form name="user" method="post" action="/user/edit">
+<table>
+	<tr>
+		<th colspan="2">Personal information</th>
+	</tr>
+	<tr>
+		<td width="120px">First Name*</td>
+		<td><input type="text" name="firstname" maxlength="50" size="30" value="{{ coderuser.firstname }}"/></td>
+	</tr>
+	<tr>
+		<td>Last Name*</td>	
+		<td><input type="text" name="lastname" maxlength="50" size="30" value="{{ coderuser.lastname }}"/></td>
+	</tr>
+	<tr>
+		<td>Email<em>(optional)</em></td>	
+		<td><input type="text" name="email" maxlength="1024" size="30" value="{{ coderuser.email }}"/></td>
+	</tr>
+	<tr>
+		<td>Homepage <em>(optional)</em></td>	
+		<td><input type="text" name="homepage" maxlength="1024" size="30" value="{{ coderuser.homepage }}"/></td>
+	</tr>
+	<tr>
+		<td>Picture <em>(optional)</em></td>
+		<td><input type="text" name="pictureurl" maxlength="1024" size="30" value="{{ pictureurl }}"/> Fetch from URL
+		</td>
+	</tr>
+	<tr>
+		<td>Resume <em>(optional)</em></td>
+		<td>
+			<textarea name="resume" cols="50" rows="10">{{ coderuser.resume }}</textarea>
+		</td>
+	</tr>
+	<tr>
+		<td>Skills Tag</td>
+		<td>
+			<input type="text" name="tags" maxlength="600" size="30" value="{{ tags }}"/> <em>Comma seperated e.g. php,python,css,javascript</em>
+		</td>
+	</tr>
+	<tr>
+		<td>&nbsp;</td>
+		<td><input type="submit" name="submit" value="Save"/></td>
+	</tr>
+</table>
+</form>
+
+{% endblock %}
+
+{% block sidebar %}
+{% endblock %}

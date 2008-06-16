@@ -1,0 +1,30 @@
+<div id="jobcompany">
+	{% if job.url %}<a href="{{ job.url }}" title="{{ job.company }}">{% if job.logo %} <img src="/jobimage/{{ job.key }}" alt="{{ job.company }}" style=""/>{% else %}{{ job.company }}{% endif %}</a>
+	{% else %}
+	{% if job.logo %}<img src="/jobimage/{{ job.key }}" alt="{{ job.company }}"/>{% endif %} <h2>{{ job.company }}</h2>
+	{% endif %}
+</div>
+<h3>{{ job.title }}</h3>
+<table>
+	<tr>
+		<th>Description</th>
+	</tr>
+	<tr>
+		<td>
+			<div id="jobdescription" style="margin: 10px;">
+			{{ jobdescriptiondisplay }}
+			</div>
+		</td>
+	</tr>
+	<tr>
+		<th>Apply now</th>
+	</tr>
+	<tr>
+		<td><a href="mailto:{{ job.email }}">{{ job.firstname }} {{ job.lastname }}</a></td>
+	</tr>
+	<tr><td><hr/></td></tr>
+	<tr>
+		<td><span style="float:left; text-align: left;">Posted on {{ job.created|date:"D, M j, Y" }}, Category {{ job.category|capfirst }}</span>
+			<div style="float: right;">View {{ job.views }} time{{ job.views|pluralize }}</div><div style="clear:both"></div></td>
+	</tr>
+</table>

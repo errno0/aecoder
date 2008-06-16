@@ -1,0 +1,86 @@
+
+{% extends "base.html" %}
+{% block body %}
+{% if errors %}
+{{ errors }}
+{% endif %}
+{% if logoerrors %}
+{% for logoerr in logoerrors %}
+<p>{{ logoerr.Logo }}</p>
+{% endfor %}
+{% endif %}
+<form action="{{ formaction }}" method="post" enctype="multipart/form-data">
+	<table>
+	<tr>
+		<th colspan="2">Contact information</th>
+	</tr>
+	<tr>
+		<td width="120px">{{ jobform.firstname.label }}</td>
+		<td>{{ jobform.firstname }}</td>
+	</tr>
+	<tr>
+		<td>{{ jobform.lastname.label }}</td>
+		<td>{{ jobform.lastname }}</td>
+	</tr>
+	<tr>
+		<td>{{ jobform.email.label }}</td>
+		<td>{{ jobform.email }}</td>
+	</tr>
+	<tr>
+		<th colspan="2">Job information</th>
+	<tr>
+	<tr>
+		<td>{{ jobform.company.label }}</td>
+		<td>{{ jobform.company }}</td>
+	</tr>
+	<tr>
+		<td>{{ jobform.title.label }}</td>
+		<td>{{ jobform.title }}</td>
+	</tr>
+	<tr>
+		<td>{{ jobform.url.label }}<i>(optional)</i></td>
+		<td>{{ jobform.url }}</td>
+	</tr>
+	<tr>
+		<td>Logo <i>(optional)</i></td>
+		<td><input type="text" name="joblogourl" maxlength="300" size="30" value="{{ joblogourl }}"/> Fetch from URL
+		<br/>
+		or
+		<br/>
+		<input type="file" name="joblogofile" size="30" maxlength="{{ MAX_LOGO_FILE_SIZE }}"/> Upload
+		</td>
+	</tr>
+	<tr>
+		<td>{{ jobform.description.label }}</td>
+		<td>{{ jobform.description }}</td>
+	</tr>
+	<tr>
+		<td> {{ jobform.category.label }}</td>
+		<td> {{ jobform.category }}</td>
+	</tr>
+	<tr>
+		<td>&nbsp;</td>
+		<td><span style="font-size: small; font-style: italic;">* required field</span></td>
+	</tr>
+	<tr>
+		<td>&nbsp;</td>
+		<td>
+			<input type="hidden" name="jobid" value="{{ jobid }}"/>
+			<input type="hidden" name="cmd" value="preview"/>
+			<input type="submit" name="preview" value="Next"/>
+		</td>
+	</tr>
+</table>
+</form>
+{% endblock %}
+
+{% block sidebar %}
+<div id="job_post_step">
+	<h1>Steps</h1>
+	<ul>
+		<li class="active">Job Detail</li>
+		<li>Preview</li>
+		<li>Complete</li>
+	</ul>
+</div>
+{% endblock %}

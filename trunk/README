@@ -1,0 +1,11 @@
+This is aecoder (App Engine Coder). 
+An open source job board based on Google App Engine.
+limk <aecoder@gmail.com>
+
+##2008-06-17
+1. modify app.yaml according to your GAE handler
+2. modify settings.py to tweak django
+3. rename appsettings_sample.py to appsettings.py and modify according to your site
+4. run appcfg.py to upload to your appengine or dev_appserver.py to run it locally
+
+

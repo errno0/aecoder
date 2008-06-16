@@ -1,0 +1,23 @@
+{% extends "base.html" %}
+{% block title %} {{ application_name }} - Error {% endblock %}
+{% block body %}
+<h1>Error</h1>
+{% if errormsg %}
+	{{ errormsg }}
+{% else %}
+	<p>Unknown error!</p>
+{% endif %}
+
+{% if erroraction %}
+	{{ erroraction }}
+{% else %}
+<p>
+	<input type="button" value="back" onClick="history.go(-1)"/>
+</p>
+
+{% endif %}
+{% endblock %}
+	
+	
+
+

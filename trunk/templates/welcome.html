@@ -1,0 +1,14 @@
+{% extends "base.html" %}
+
+{% block title %}Welcome to {{ application_name }}{% endblock %}
+{% block body %}
+<h1>Welcome to {{ application_name }}</h1>
+<div class="updateprofile">
+	<h2><a href="/user/edit">Update Profile</a></h2>
+	<p>Update your latest portfolio so that code buyers could reach you directly.</p> 
+</div>
+<div class="updateprofile">
+	<h2><a href="{{ lasturl }}">Continue</a></h2>
+	<p>Skip profile setting and take me to where I left</p>
+</div>
+{% endblock %}

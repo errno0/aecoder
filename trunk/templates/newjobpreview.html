@@ -1,0 +1,32 @@
+{% extends "base.html" %}
+{% block title %} {{ application_name }} - {{ page_subtitle }} {% endblock %}
+{% block body %} 
+<h1>{{ page_subtitle }}</h1>
+<form name="job" method="post" action="{{ formaction }}">
+	{% include "jobdetail.html" %}
+<p align="center">
+	<input type="hidden" name="firstname" value="{{ job.firstname }}"/>
+	<input type="hidden" name="lastname" value=" {{ job.lastname }}"/>
+	<input type="hidden" name="email" value="{{ job.email }}"/>
+	<input type="hidden" name="title" value="{{ job.title }}"/>
+	<input type="hidden" name="company" value="{{ job.company }}"/>
+	{% if job.url %} <input type="hidden" name="url" value="{{ job.url }}"/> {% endif %}
+	<input type="hidden" name="category" value="{{ job.category }}"/>
+	<input type="hidden" name="description" value="{{ job.description }}"/>
+	<input type="hidden" name="jobid" value="{{ jobid }}"/>
+	<input type="hidden" name="cmd" value="confirm"/>
+	<input type="submit" name="submit" value="Confirm"/>
+</p>
+</form>
+{% endblock %}
+
+{% block sidebar %}
+<div id="job_post_step">
+	<h1>Steps</h1>
+	<ul>
+		<li>Job Detail</li>
+		<li class="active">Preview</li>
+		<li>Complete</li>
+	</ul>
+</div>
+{% endblock %}
