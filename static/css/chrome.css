@@ -1,0 +1,177 @@
+body {
+  margin: 0;
+}
+
+img {
+	border: none;
+}
+
+#header .top {
+  height: 33px;
+  position: relative;
+}
+
+#header .top .title {
+  position: absolute;
+  top: 5px;
+  left: 6px;
+}
+
+#header .top .title img {
+  width: 110px;
+  height: 32px;
+  border: 0;
+  margin-left: 10px;
+}
+		
+
+#header .top .login {
+  position: absolute;
+  top: 7px;
+  right: 7px;
+}
+
+#header .top .login .nickname {
+  font-weight: bold;
+}
+
+#header .bottom {
+  clear: both;
+  background-color: #c3d9ff;
+  margin-top: 5px;
+  padding: 3px 7px 3px 5px;
+}
+
+#header .bottom .attribution {
+  float: right;
+  padding-top: 3px;
+  padding-right: 4px;
+}
+
+#header .bottom .navpath {
+  float: left;
+  margin-left: 30px; 
+}
+
+#header .bottom .buttons .item {
+  margin-right: 4px;
+}
+
+
+#body {
+  margin-left: 30px;
+  margin-top: 20px;
+  float: left;
+  width: 65%;
+}
+
+#sidebar {
+  margin-top: 20px;
+  margin-right: 30px;
+  float: right;
+  width: 20%;
+}
+
+#about, #job_post_step, 
+#related, #profile {
+  margin-top: 20px;
+  border: 1px solid #369;
+  background-color: #9cf;
+  padding: 10px;
+
+}
+
+.updateprofile {
+	margin:20px;
+	border: 1px solid #369;
+	background-color: #9cf;
+	padding: 20px;
+	float: left;
+	width: 280px;
+	height: 200px;
+	vertical-align: middle;
+	text-align: center;
+}
+
+#job_post_step ul {
+	list-style: none;
+	margin-left: 0;
+	padding-left: 1em;
+	text-indent: -0.5em;
+}
+
+#job_post_step li:before {
+	content: "\00BB \0020";
+
+}
+
+#job_post_step li.active {
+	font-weight: bold;
+}
+
+#body table {
+	width: 100%;
+}
+
+#body table th, #body table td {
+	padding: 3px 5px;
+	text-align: left;
+	vertical-align: top;
+}
+
+#body table th {
+	background-color: #9cf;
+}
+
+#footer {
+  border-top: 1px solid #369;
+  margin-top: 4em;
+}
+
+#footer.contact {
+  padding: 5px;
+
+}
+
+#jobcompany {
+  margin-top: 2em;
+}
+
+a.button, input[type^="submit"], input[type^="button"] {
+  margin: 0;
+  padding: 2px 5px 2px 5px;
+  font-family: Arial, Sans-serif;
+  font-size: 12px;
+  text-decoration: none;
+  color: #222;
+  cursor: default;
+  background: #ddd url("/static/images/button-background.gif") repeat-x 0 0;
+  border: 1px solid #aaa;
+}
+
+a.button:hover, input[type^="submit"]:hover, input[type^="button"]:hover {
+  border-color: #9cf #69e #69e #7af;
+}
+
+.footnote {
+  text-align: center; 
+  clear: both;
+  
+}
+
+
+.jobbox {
+  float: left;
+  margin-left: 10px;
+  border: 1px #000 solid;
+  width: 300px;
+}
+
+.jobbox h1 {
+  background-color: #9cf;
+  font-family: Arial, Sans-serif;
+  font-size: 12px;
+  font-weight: bold;
+  padding: 5px;
+ 
+}

@@ -1,0 +1,17 @@
+{% extends "base.html" %}
+{% block title %} {{ application_name }} - {{ page_subtitle }} {% endblock %}
+{% block body %} 
+<h1>{{ page_subtitle }}</h1>
+	{% include "jobdetail.html" %}
+{% endblock %}
+
+{% block sidebar %}
+{% if relatedjobs %}
+<div id="related">
+			<h1>Related Job</h1>
+       {% for rjob in relatedjobs %}
+      <div class="relatedjob"><a href="/job/{{ rjob.key }}">{{ rjob.title }}</a></div>
+      {% endfor %}
+</div>
+{% endif %}
+{% endblock %}

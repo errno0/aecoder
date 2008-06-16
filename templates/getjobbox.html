@@ -1,0 +1,44 @@
+{% extends "base.html" %}
+
+{% block body%}
+<script src="http://{{ request.environ.HTTP_HOST }}/jobbox.js">
+</script>
+<script type="text/javascript">
+function displayjobbox()
+{
+  var widthsetting = document.getElementById('widthsetting');
+  var jobboxcopy= document.getElementById('jobboxcopy');
+  var jobboxsample = document.getElementById('jobboxsample');
+  
+  if(widthsetting)
+  {
+    if(widthsetting.value < 100)
+      widthsetting.value = 100;
+      
+    var showscript = 'Copy and paste the following code into your website.<br/>'; 
+    showscript += '<textarea id="jobboxarea" rows="8" cols="50">';
+    showscript += '&lt;!-- copy this script into your website --&gt;\n';
+    showscript += '&lt;script src="http://{{ request.environ.HTTP_HOST }}/jobbox.js"&gt;&lt;/script&gt;\n';
+    showscript += '&lt;script type="text/javascript"&gt;\n'
+    showscript += 'var boxwidth=' + String(widthsetting.value) + ';\n';
+    showscript += 'showjobbox(boxwidth);\n'
+    showscript += '&lt;/script&gt;\n';
+    showscript += '</textarea>'; 
+    
+    jobboxcopy.innerHTML= showscript
+ 
+    jobboxsample.style.width = widthsetting.value + 'px';
+  }
+}
+window.onload = displayjobbox;
+</script>
+<div id="jobboxgenerator">
+Job box width: <input type="text" id="widthsetting" name="boxwidth" value="250"><input type="button" onclick="displayjobbox();" name="generate" value="Generate">
+</div>
+<div id="jobboxcopy" style="margin: 10px; float: left;">
+
+</div>
+<div id="jobboxsamplediv" style="margin: 10px; float:left;">
+{{ jobboxsample }}
+</div>
+{% endblock %}
