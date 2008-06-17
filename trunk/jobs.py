@@ -346,6 +346,8 @@ def viewjob(request, jobid):
     'navpaths': navpaths,
   }
   if jobid:
+
+    logging.debug("viewing job jobid %s", jobid)
     job = models.Jobs.get(jobid)
     
     if job != None and job.status == 'published':
