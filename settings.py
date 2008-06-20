@@ -66,7 +66,7 @@ MEDIA_URL = ''
 ADMIN_MEDIA_PREFIX = '/media/'
 
 # Make this unique, and don't share it with anybody.
-SECRET_KEY = 'lak8193hfnscproi9rtf93ufksndmcnfii831tsi'
+SECRET_KEY = appsettings.DJANGO_SECRET_KEY
 
 # List of callables that know how to import templates from various sources.
 TEMPLATE_LOADERS = (

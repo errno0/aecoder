@@ -4,6 +4,8 @@ APPLICATION_NAME = 'AECoder'
 MAX_LOGO_FILE_SIZE = 1048576
 MAX_JOB_PER_PAGE = 10
 
+DJANGO_SECRET_KEY = 'xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx'
+
 JOB_CATEGORIES = ['design', 'script', 'marketing', 'other']
 
 MAX_IMAGE_DIMENSION = [300, 120]
